@@ -17,7 +17,7 @@ Thank you for your interest in contributing to this project! We welcome contribu
 This is a Next.js webapp project that demonstrates implementing strict Content Security Policy (CSP) with nonces.
 
 Before contributing, please:
-- Read through the [README.md](README.md) to understand the project
+- Read through the project [README.md](with-strict-csp-app/README.md) to understand the implementation details
 - Check existing issues and pull requests to avoid duplicates
 - Familiarize yourself with Next.js and React best practices
 
@@ -34,8 +34,8 @@ Before contributing, please:
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/webapp.git
-   cd webapp
+   git clone https://github.com/YOUR-USERNAME/REPOSITORY-NAME.git
+   cd REPOSITORY-NAME
    ```
 
 3. Navigate to the app directory and install dependencies:
