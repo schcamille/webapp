@@ -48,8 +48,8 @@ jobs:
       - name: Check for tests
         run: |
           echo "Checking for test files..."
-          TEST_REGEX='\( -name "*test*" -o -name "*spec*" \)'
-          if find . -type f $TEST_REGEX | grep -q .; then
+          if find . -type f \( -name "*test*" -o -name "*spec*" \) \
+            | grep -q .; then
             echo "✓ Test files found"
           else
             echo "⚠ No test files found (this is just a warning)"
