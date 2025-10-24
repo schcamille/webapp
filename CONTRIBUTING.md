@@ -25,6 +25,7 @@ By participating in this project, you are expected to uphold a standard of respe
    git clone https://github.com/YOUR_USERNAME/webapp.git
    cd webapp
    ```
+   (Replace `YOUR_USERNAME` with your GitHub username)
 3. **Navigate to the project directory**:
    ```bash
    cd with-strict-csp-app
