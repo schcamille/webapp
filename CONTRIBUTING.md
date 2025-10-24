@@ -16,7 +16,7 @@ Thank you for your interest in contributing to this project! This document provi
 
 Before you begin:
 - Make sure you have a GitHub account
-- Familiarize yourself with the project by reading the [README](README.md)
+- Familiarize yourself with the project by reading the [project README](with-strict-csp-app/README.md)
 - Check existing [issues](../../issues) and [pull requests](../../pulls) to see if your contribution is already being worked on
 
 ## Development Setup
@@ -35,7 +35,7 @@ Before you begin:
    cd webapp
    ```
 
-3. Navigate to the application directory:
+3. Navigate to the Next.js application directory:
    ```bash
    cd with-strict-csp-app
    ```
