@@ -1,0 +1,58 @@
+name: Contribution Check
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  check-contribution:
+    name: Validate Contribution
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Check for CONTRIBUTING.md
+        run: |
+          if [ -f "CONTRIBUTING.md" ]; then
+            echo "✓ CONTRIBUTING.md file exists"
+          else
+            echo "✗ CONTRIBUTING.md file not found"
+            exit 1
+          fi
+      
+      - name: Validate PR title format
+        if: github.event_name == 'pull_request'
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          echo "PR Title: $PR_TITLE"
+          
+          # Check if PR title follows conventional commits format
+          if echo "$PR_TITLE" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?: .+"; then
+            echo "✓ PR title follows conventional commits format"
+          else
+            echo "⚠ PR title should follow conventional commits format"
+            echo "Examples: feat: add new feature, fix: resolve bug, docs: update readme"
+          fi
+      
+      - name: Check for tests
+        run: |
+          echo "Checking for test files..."
+          if find . -type f \( -name "*test*" -o -name "*spec*" \) | grep -q .; then
+            echo "✓ Test files found"
+          else
+            echo "⚠ No test files found (this is just a warning)"
+          fi
+      
+      - name: Summary
+        run: |
+          echo "=========================================="
+          echo "Contribution validation completed!"
+          echo "=========================================="
